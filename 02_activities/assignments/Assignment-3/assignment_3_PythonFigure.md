@@ -2,31 +2,78 @@
 
 ## Assignment 3: Final Project
 
-### Requirements:
-- We will finish this class by giving you the chance to use what you have learned in a practical context, by creating data visualizations from raw data. 
-- Choose a dataset of interest from the [City of Toronto’s Open Data Portal](https://www.toronto.ca/city-government/data-research-maps/open-data/) or [Ontario’s Open Data Catalogue](https://data.ontario.ca/). 
-- Using Python and one other data visualization software (Excel or free alternative, Tableau Public, any other tool you prefer), create two distinct visualizations from your dataset of choice.  
-- For each visualization, describe and justify: 
+
+DATASET: https://open.toronto.ca/dataset/washroom-facilities/
+IMAGE: TorontoParksPythonPlot.png
+
     > What software did you use to create your data visualization?
 
+    Python
+
     > Who is your intended audience? 
+
+    City of Toronto Residents
     
     > What information or message are you trying to convey with your visualization? 
+
+    The different types of available washroom facilities across Toronto parks.
     
     > What aspects of design did you consider when making your visualization? How did you apply them? With what elements of your plots? 
+
+        Clarity & simplicity: Used a single line to show the count by toilet type, with clear axis labels and a descriptive title. Removed the top/right borders to reduce visual clutter.
+
+        Visual hierarchy: Made the data line thicker and dark green so the trend is the first thing viewers notice; kept the background plain white to avoid distraction.
+
+        Interpretability: Rotated x-axis labels to prevent overlap and make category names readable. Added a legend to clarify what the line represents.
+
+        Annotation & engagement: Added icons above each category to help viewers quickly recognize the facility types and to make the plot more approachable for residents.
+
     
     > How did you ensure that your data visualizations are reproducible? If the tool you used to make your data visualization is not reproducible, how will this impact your data visualization? 
     
-    > How did you ensure that your data visualization is accessible?  
+        I used a Python script that reads the same source CSV, performs a transparent counting step (groupby/value_counts), and generates the plot using code. Anyone with the file and script can recreate the exact figure.
+
+        To improve reproducibility, I’d keep the script in a version-controlled repo (e.g., Git), and note package versions (e.g., pandas, matplotlib, Pillow).
+
+        One limitation: the icons are pulled from external URLs. If a link changes or disappears, the plot will still reproduce but without icons (or it may error). A fix is to download the icons once and reference local files.
+
     
+    > How did you ensure that your data visualization is accessible?  
+
+        Used high contrast (dark green line on a white background) and large figure size for readability.
+
+        Included clear labels and a title so the plot is understandable without extra context.
+
+        Avoided relying on color alone for meaning (there’s only one series and it’s labeled in the legend).
+
+        To make it more accessible, I would also: add data labels (values) or a small table summary for screen-reader users, ensure a colorblind-safe palette if additional series are added, provide alt text describing the main takeaway.
+
     > Who are the individuals and communities who might be impacted by your visualization?  
+
+        Toronto residents planning park visits (families, walkers, seniors).
+
+        People who rely on predictable washroom access: parents with young children, pregnant people, older adults, people with disabilities, and people with certain health conditions.
+
+        Visitors and commuters who use parks for recreation or as part of daily routes.
+
+        City planners or advocacy groups interested in identifying gaps in amenities.
     
     > How did you choose which features of your chosen dataset to include or exclude from your visualization? 
-    
+
+        Included only the “type of toilet” field and the count of facilities because the goal was to show a straightforward overview of what kinds of washrooms are available.
+
     > What ‘underwater labour’ contributed to your final data visualization product?
 
+        Data cleaning/standardization: handling missing toilet types (e.g., filling NAs as “Unknown”), ensuring consistent category labels.
 
+        Data transformation: aggregating to counts per type and ordering categories for readability.
 
+        Design iteration: testing label rotation, margins, line thickness, and icon placement so nothing overlaps or gets cut off.
+
+        Asset preparation: sourcing icons, resizing them consistently, and positioning them relative to plotted points.
+
+        Debugging: resolving issues like unintended second lines, default color cycles, background styling, and layout spacing.     
+    
 
 - This assignment is intentionally open-ended - you are free to create static or dynamic data visualizations, maps, or whatever form of data visualization you think best communicates your information to your audience of choice! 
 - Total word count should not exceed **(as a maximum) 1000 words** 
@@ -51,7 +98,7 @@
 🚨 **Please review our [Assignment Submission Guide](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md)** 🚨 for detailed instructions on how to format, branch, and submit your work. Following these guidelines is crucial for your submissions to be evaluated correctly.
 
 ### Submission Parameters:
-* Submission Due Date: `23:59 - 02/23/2026`
+* Submission Due Date: `23:59 - 11/02/2025`
 * The branch name for your repo should be: `assignment-3`
 * What to submit for this assignment:
     * A folder/directory containing:
